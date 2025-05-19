@@ -1,5 +1,7 @@
 # Roman Numeral problem
 
+Pass 3 out of 4 tests for credit.
+
 Convert the roman numeral to an integer
 i = 1
 v = 5

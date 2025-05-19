@@ -37,4 +37,7 @@ def convert_roman_numeral_to_int(roman_numeral:str) -> int:
         "D": 500,
         "M": 1000
     }
+    
+    total = 0
+    
     pass
