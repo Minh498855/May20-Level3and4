@@ -37,7 +37,41 @@ def convert_roman_numeral_to_int(roman_numeral:str) -> int:
         "D": 500,
         "M": 1000
     }
+
+    roman_num = roman_numeral.upper()
     
+    if len(roman_numeral) == 0:
+        return -1
+
+    for char in roman_num:
+        if char not in romal_values:
+            return -1
+    
+    count = 1
+    prev_char = ''
+    for char in roman_num:
+        if char == prev_char:
+            count += 1
+            if count > 3:
+                return -1
+        else:
+            count = 1
+            prev_char = char
+
     total = 0
     
-    pass
+
+    for i in range(len(roman_num)):
+        a = romal_values[roman_num[i]]
+
+        if i + 1 < len(roman_num):
+            b = romal_values[roman_num[i+1]]
+            if a >= b:
+                total += a
+            else:
+                total -= a
+        else:
+            total += a
+
+    return total
+        
